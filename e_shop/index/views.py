@@ -1,14 +1,14 @@
 from django.shortcuts import render
-from .models import New, News
+from .models import Category, News
 
 
 # Create your views here.
 
 def home_page(request):
+    news = News.objects.all()
+    categories = Category.objects.all()
 
-    ttttt = New.objects.all()
-    rrrrr = News.objects.all()
-
-    context = {'ttttt' : New, 'rrrrr': News}
+    context = {'news': news, 'categories': categories}
 
     return render(request, 'home.html', context)
+
