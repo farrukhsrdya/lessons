@@ -50,6 +50,7 @@
     <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
         {% for p in news %}
       <div class="feature col">
+          <img src="{{ p.news_photo.url }}" alt="{{ p }}" width="300" height="300">
         <h2 class="text-white">{{ p.news_name }}</h2>
         <p class="text-white">{{ p.news_zogolovok }}</p>
         <a href="/news/{{ p.id }}" class="icon-link">
